@@ -1,0 +1,25 @@
+{
+  "name": "nexflow",
+  "version": "1.0.0",
+  "description": "Bem-vindo ao repositório oficial do NexFlow API Gateway – uma solução moderna e escalável para gerenciamento eficiente de APIs. O NexFlow atua como um hub central, conectando e facilitando a comunicação entre diferentes serviços e aplicativos. Esta plataforma oferece recursos avançados, incluindo roteamento inteligente, controle de acesso, transformação de dados e métricas detalhadas para otimizar o ciclo de vida das APIs.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "dev-test": "nodemon src/protected-service.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonathan Mandombe",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "http-proxy-middleware": "^2.0.6",
+    "jsonwebtoken": "^9.0.2",
+    "keycloak-connect": "^23.0.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
