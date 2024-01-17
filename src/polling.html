@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polling Example</title>
+</head>
+<body>
+  <h1>Polling Example</h1>
+  <script>
+    // Função para realizar polling
+    function poll() {
+      fetch('/polling')
+        .then(response => response.json())
+        .then(data => {
+          console.log('Notificação recebida:', data);
+          setTimeout(poll, 5000); // Próxima verificação após 5 segundos
+        })
+        .catch(error => console.error('Erro no polling:', error));
+    }
+
+    // Iniciar o polling
+    poll();
+  </script>
+</body>
+</html>

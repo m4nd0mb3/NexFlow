@@ -7,6 +7,9 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
     "dev-test": "nodemon src/protected-service.js",
+    "dev-websocket": "nodemon src/websocket.js",
+    "dev-sse": "nodemon src/sse.js",
+    "dev-polling": "nodemon src/polling.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonathan Mandombe",
@@ -17,7 +20,8 @@
     "http-proxy-middleware": "^2.0.6",
     "jsonwebtoken": "^9.0.2",
     "keycloak-connect": "^23.0.3",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "socket.io": "^4.7.4"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSE Example</title>
+</head>
+
+<body>
+    <h1>SSE Example</h1>
+    <script>
+        const eventSource = new EventSource('/sse');
+
+        eventSource.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            console.log('Notificação recebida:', data);
+        };
+    </script>
+</body>
+
+</html>
