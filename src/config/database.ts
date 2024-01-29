@@ -24,7 +24,8 @@ export const PostgresDataSource = new DataSource({
     "synchronize": true,
     "logging": false,
     "entities": [
-        "src/entities/*.ts"
+        // "src/entities/*.ts",
+        "build/entities/*.{ts,js}",
     ],
     "migrations": [
         "src/migrations/*.ts"
