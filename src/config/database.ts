@@ -1,5 +1,7 @@
 import { createConnection } from 'typeorm';
 import { DataSource } from "typeorm"
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 // export const MysqlDataSource = new DataSource({
 //     type: "mysql",
@@ -14,12 +16,12 @@ import { DataSource } from "typeorm"
 // })
 
 export const PostgresDataSource = new DataSource({
-    "type": "postgres",
-    "host": "localhost",
-    "port": 5432,
-    "username": "postgres",
-    "password": "postgres",
-    "database": "nex_flow",
+    "type": 'postgres',
+    "host": process.env.POSTGRES_SERVER as string,
+    "port": Number.parseInt(process.env.POSTGRES_PORT),
+    "username": process.env.POSTGRES_USER as string,
+    "password": process.env.POSTGRES_PASSWORD as string,
+    "database": process.env.POSTGRES_DB as string,
     "synchronize": true,
     "logging": false,
     "entities": [

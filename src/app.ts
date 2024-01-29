@@ -8,6 +8,8 @@ import { InversifyExpressServer } from 'inversify-express-utils';
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './swagger';
 const server = new InversifyExpressServer(container);
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 // const app = express();
 
@@ -17,7 +19,7 @@ server.setConfig((app) => {
 });
 
 const app = server.build();
-const port = 3000;
+const port = Number.parseInt(process.env.PORT);
 // Conectar ao banco de dados
 // connectDatabase();
 // Middlewares
