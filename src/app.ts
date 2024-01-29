@@ -2,7 +2,6 @@
 import 'reflect-metadata';
 import express from 'express';
 import { PostgresDataSource } from './config/database';
-import routes from './routes/routes';
 import container from './inversify.config';
 import { InversifyExpressServer } from 'inversify-express-utils';
 import swaggerUi from 'swagger-ui-express';

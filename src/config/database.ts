@@ -1,4 +1,3 @@
-import { createConnection } from 'typeorm';
 import { DataSource } from "typeorm"
 import * as dotenv from 'dotenv';
 dotenv.config();
@@ -39,9 +38,7 @@ export const PostgresDataSource = new DataSource({
     //     "subscribersDir": "src/subscribers"
     // }
 })
-// export const connectDatabase = async () => {
-//   await createConnection();
-// };
+
 
 // PostgresDataSource.initialize()
 //     .then(() => {
