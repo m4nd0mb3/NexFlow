@@ -22,6 +22,6 @@ router.use(LoggerMiddleware.log);
 
 // // Rotas protegidas (requerem autenticação)
 router.use(AuthMiddleware.authenticate);
-router.get('/users/:id', container.get<UserController>(TYPES.UserController).getUserById);
+// router.get('/users/:id', container.get<UserController>(TYPES.UserController).getUserById);
 
 export default router;
