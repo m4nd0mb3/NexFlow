@@ -141,6 +141,33 @@ export class UserController {
 
 /**
  * @swagger
+ * /:
+ *   get:
+ *     summary: Obter todos os usuários
+ *     responses:
+ *       200:
+ *         description: Lista de usuários obtida com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: string
+ *                 name:
+ *                   type: string
+ *                 email:
+ *                   type: string
+ *       500:
+ *         description: Erro ao obter os usuários.
+ *         content:
+ *           application/json:
+ *             exemple:
+ *               error: Erro ao obter os usuários
+ */
+
+/**
+ * @swagger
  * /users/signIn:
  *   post:
  *     summary: Autentica um usuário
