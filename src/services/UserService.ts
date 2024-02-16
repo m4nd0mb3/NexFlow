@@ -23,7 +23,7 @@ export class UserService {
     async getUserById(userId: string): Promise<User | undefined | null> {
         return await this.userRepository.findOneBy({uuid:userId});
     }
-    async getAllUser(): Promise<User []| undefined| null>{
+    async getAllUser(): Promise<User[]| undefined| null>{
         try {
             const users: User[] = await this.userRepository.find({ select: ["name", "email"] });
             return users;

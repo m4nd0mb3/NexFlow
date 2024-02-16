@@ -141,7 +141,7 @@ export class UserController {
 
 /**
  * @swagger
- * /:
+ * /users:
  *   get:
  *     summary: Obter todos os usuários
  *     responses:
