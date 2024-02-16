@@ -41,6 +41,18 @@ export class UserController {
     //     res.json(user);
     // }
 
+
+    @httpGet("/")
+    async getAllUsers( @response() response:any): Promise<void>{
+        try {
+            const users: User[]=await this.userService.getAllUser();
+             response.json(users)
+        } catch (error) {
+            response.status(500).json({error: 'Erro ao obter os users'});
+            
+        }
+    }
+
     @httpPost('/signIn', signInUserValidationMiddleware /* Middlewares podem ser adicionados aqui */)
     async signInUser(@request() req: any, @response() res: any): Promise<void> {
         try {

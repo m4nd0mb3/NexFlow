@@ -23,6 +23,17 @@ export class UserService {
     async getUserById(userId: string): Promise<User | undefined | null> {
         return await this.userRepository.findOneBy({uuid:userId});
     }
+    async getAllUser(): Promise<User []| undefined| null>{
+        try {
+            const users: User[] = await this.userRepository.find({ select: ["name", "email"] });
+            return users;
+          } catch (error) {
+           
+            console.error(error);
+            return null;
+          }
+
+    }
 
     async signInUser(email: string, password: string): Promise<string | undefined | null> {
         const user = await this.userRepository.findOneBy({email:email});
