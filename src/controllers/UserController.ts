@@ -144,6 +144,7 @@ export class UserController {
  * /users:
  *   get:
  *     summary: Obter todos os usuários
+ *     tags: [Users]
  *     responses:
  *       200:
  *         description: Lista de usuários obtida com sucesso
