@@ -1,5 +1,5 @@
 import { UserRepository } from '../repositories/UserRepository';
-import { User, UserData } from '../entities/User';
+import { User } from '../entities/User';
 import { injectable } from 'inversify';
 import { generateToken } from '../services/AuthService';
 import * as bcrypt from 'bcryptjs';
@@ -44,11 +44,11 @@ export class UserService {
         if (!passwordMatch) {
             return null;
         }
-        const userData: UserData = user;
+        delete user.password
         
         return {
             token: generateToken(user),
-            userData
+            user
         };
     }
 }
