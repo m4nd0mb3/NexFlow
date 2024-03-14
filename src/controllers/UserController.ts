@@ -64,7 +64,7 @@ export class UserController {
                 return res.status(401).json({ message: 'Credenciais inválidas' });
             }
 
-            res.json({ token: user });
+            res.json({ data: user });
         } catch (error) {
             console.error(error);
             res.status(500).json({ message: 'Erro ao realizar o login' });
