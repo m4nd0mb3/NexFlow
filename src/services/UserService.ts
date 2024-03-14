@@ -35,7 +35,7 @@ export class UserService {
 
     }
 
-    async signInUser(email: string, password: string): Promise<string | undefined | null> {
+    async signInUser(email: string, password: string): Promise<any | undefined | null> {
         const user = await this.userRepository.findOneBy({email:email});
         if (!user) {
             return null;
@@ -45,6 +45,9 @@ export class UserService {
             return null;
         }
         
-        return generateToken(user);
+        return {
+            token: generateToken(user),
+            user
+        };
     }
 }
