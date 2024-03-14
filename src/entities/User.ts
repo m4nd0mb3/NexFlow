@@ -25,6 +25,24 @@ export class User {
     password: string;
 }
 
+export class UserData {
+    @PrimaryGeneratedColumn('uuid')
+    uuid: string;
+
+    @Column('varchar', { length: 200 })
+    @IsNotEmpty({ message: 'O nome não pode estar vazio' })
+    name: string;
+
+    @Column({
+        type: "varchar",
+        length: 150,
+        unique: true,
+    })
+    @IsNotEmpty({ message: 'O e-mail não pode estar vazio' })
+    @IsEmail({}, { message: 'Formato de e-mail inválido' })
+    email: string;
+}
+
 export class SignInUser {
 
     @IsNotEmpty({ message: 'O e-mail não pode estar vazio' })
